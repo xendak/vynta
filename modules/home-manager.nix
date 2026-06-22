@@ -108,6 +108,8 @@ let
                 echo "]"
               } > "${targetPath}"
             ''
+          else if generatedPath == "nushell" then
+            ""
           else
             let
               cleanGeneratedPath = lib.elemAt (lib.splitString "_clone_" generatedPath) 0;
