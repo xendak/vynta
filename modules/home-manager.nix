@@ -187,51 +187,51 @@ let
       }
 
       ${lib.optionalString (builtins.hasAttr "nushell" cfg.targets)
-        #bash
+        # bash
         ''
-           VIVID_THEME_FILE="$SRC_DIR/vivid/themes/current.yml"
-           if [[ -f "$VIVID_THEME_FILE" ]]; then
-             vivid generate "$VIVID_THEME_FILE" > /tmp/current_ls_colors
-           elif [[ "$THEME_TYPE" == "dark" ]]; then
-             vivid generate nord > /tmp/current_ls_colors
-           else
-             vivid generate rose-pine-dawn > /tmp/current_ls_colors
-           fi
-           LS_COLORS="$(cat /tmp/current_ls_colors)"
-           export LS_COLORS
+          VIVID_THEME_FILE="$SRC_DIR/vivid/themes/current.yml"
+          if [[ -f "$VIVID_THEME_FILE" ]]; then
+            vivid generate "$VIVID_THEME_FILE" > /tmp/current_ls_colors
+          elif [[ "$THEME_TYPE" == "dark" ]]; then
+            vivid generate nord > /tmp/current_ls_colors
+          else
+            vivid generate rose-pine-dawn > /tmp/current_ls_colors
+          fi
+          LS_COLORS="$(cat /tmp/current_ls_colors)"
+          export LS_COLORS
 
-          cat > "${cfg.targets.nushell}" << NUEOF
-           # AUTO GENERATED
-           let color_config = {
-               separator: "light_gray"
-               leading_trailing_space_bg: "#ffffff"
-               header: "green"
-               date: "magenta"
-               filesize: "blue"
-               row_index: "cyan"
-               hints: "light_gray"
-               string: "white"
-               primitive: "white"
-               int: "green"
-               float: "green"
-               bool: "cyan"
-               nothing: "red"
-               binary: "magenta"
-               cellpath: "cyan"
-               duration: "yellow"
-               range: "yellow"
-               search_result: "light_yellow"
-               shape_garbage: "light_red"
-               shape_bool: "light_cyan"
-               shape_int: "light_green"
-               shape_float: "light_green"
-               shape_range: "light_yellow"
-               shape_string: "light_blue"
-               shape_string_interpolation: "light_cyan"
-           }
-           \$env.config.color_config = \$color_config
-           \$env.LS_COLORS = "$LS_COLORS"
-           NUEOF
+          printf '%s\n' \
+          '# AUTO GENERATED' \
+          'let color_config = {' \
+          '    separator: "light_gray"' \
+          '    leading_trailing_space_bg: "#ffffff"' \
+          '    header: "green"' \
+          '    date: "magenta"' \
+          '    filesize: "blue"' \
+          '    row_index: "cyan"' \
+          '    hints: "light_gray"' \
+          '    string: "white"' \
+          '    primitive: "white"' \
+          '    int: "green"' \
+          '    float: "green"' \
+          '    bool: "cyan"' \
+          '    nothing: "red"' \
+          '    binary: "magenta"' \
+          '    cellpath: "cyan"' \
+          '    duration: "yellow"' \
+          '    range: "yellow"' \
+          '    search_result: "light_yellow"' \
+          '    shape_garbage: "light_red"' \
+          '    shape_bool: "light_cyan"' \
+          '    shape_int: "light_green"' \
+          '    shape_float: "light_green"' \
+          '    shape_range: "light_yellow"' \
+          '    shape_string: "light_blue"' \
+          '    shape_string_interpolation: "light_cyan"' \
+          '}' \
+          '$env.config.color_config = $color_config' \
+          > "${cfg.targets.nushell}"
+          printf '$env.LS_COLORS = "%s"\n' "$LS_COLORS" >> "${cfg.targets.nushell}"
         ''
       }
 
