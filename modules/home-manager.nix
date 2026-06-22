@@ -231,8 +231,8 @@ let
               shape_string: "light_blue"
               shape_string_interpolation: "light_cyan"
           }
-          \$env.config.color_config = \$color_config
-          \$env.LS_COLORS = "$LS_COLORS"
+          ''$env.config.color_config = ''$color_config
+          ''$env.LS_COLORS = "$LS_COLORS"
           NUEOF
         ''
       }
