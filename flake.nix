@@ -33,6 +33,7 @@
         targetModules
         // {
           default = import ./modules/home-manager.nix self;
+          targets = import ./modules/targets;
         };
 
       # nix run .#switch -- <theme>
