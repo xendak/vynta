@@ -301,9 +301,9 @@ in
     };
 
     wallpaperScript = lib.mkOption {
-      type = lib.types.str;
-      default = "";
-      description = "Path to a script called with <wallpaper> on start. Leave empty to skip.";
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+      description = "Command + args to run for wallpaper setup, with wallpaper path appended.";
     };
 
     starterExtraCommands = lib.mkOption {
