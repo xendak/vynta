@@ -269,8 +269,9 @@ let
       echo "$(date +"%d/%m/%y | %H:%M >")" "Starting theme: $TARGET_THEME." >> /tmp/nix-autostart
 
       vynta "$TARGET_THEME" &
-      ${lib.optionalString (cfg.wallpaperScript != "") ''
-        "${cfg.wallpaperScript}" "$TARGET_WALL"
+
+      ${lib.optionalString (cfg.wallpaperScript != [ ]) ''
+        ${lib.escapeShellArgs cfg.wallpaperScript} "$TARGET_WALL"
       ''}
 
       ${cfg.starterExtraCommands}
