@@ -67,7 +67,7 @@ let
 
     surface_dim = "#12131A";
     surface_bright = "#454756";
-    surface_container_lowest = "#060709";
+    surface_container_lowest = "#101119";
     surface_container_low = "#12131A";
     surface_container = "#1E1F28";
     surface_container_high = "#2D2E3B";

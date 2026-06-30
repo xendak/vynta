@@ -84,7 +84,7 @@ in
   slug = "nord";
   name = "nord";
   type = "dark";
-  author = "xendak";
+  author = "arcticicestudio";
   must = must;
   overrides = overrides;
 }

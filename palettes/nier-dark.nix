@@ -50,7 +50,7 @@ let
     white = "#C8C093";
 
     gray = "#a89984";
-    orange = "#d65d0e";
+    orange = "#D08770";
 
   };
 

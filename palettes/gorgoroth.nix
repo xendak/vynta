@@ -48,7 +48,7 @@ let
     white = "#C8C093";
 
     gray = "#a89984";
-    orange = "#d65d0e";
+    orange = "#D08770";
 
     # white = "#3c3836";
     # red = "#ab4642";
@@ -80,7 +80,7 @@ in
   slug = "gorgoroth";
   name = "gorgoroth";
   type = "dark";
-  author = "xendak";
+  author = "metalelf0";
   must = must;
   overrides = overrides;
 }
