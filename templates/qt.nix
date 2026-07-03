@@ -170,17 +170,17 @@ in
       ForegroundNormal=${m.fg}
 
       [Colors:Selection]
-      BackgroundAlternate=${m.secondary}
-      BackgroundNormal=${m.primary}
+      BackgroundAlternate=${m.surface_container_highest}
+      BackgroundNormal=${m.primary_container}
       DecorationFocus=${m.primary}
       DecorationHover=${m.primary}
-      ForegroundActive=${m.on_primary}
+      ForegroundActive=${m.on_primary_container}
       ForegroundInactive=${m.on_surface_variant}
       ForegroundLink=${m.secondary}
       ForegroundNegative=${m.error}
       ForegroundNeutral=${m.tertiary}
-      ForegroundNormal=${m.on_primary}
-      ForegroundPositive=${m.primary}
+      ForegroundNormal=${m.on_primary_container}
+      ForegroundPositive=${m.tertiary}
       ForegroundVisited=${m.on_secondary_container}
 
       [Colors:Tooltip]
@@ -232,17 +232,17 @@ in
       ForegroundVisited=${m.on_secondary_container}
 
       [Colors:Selection]
-      BackgroundAlternate=${m.secondary}
-      BackgroundNormal=${m.primary}
+      BackgroundAlternate=${m.surface_container_highest}
+      BackgroundNormal=${m.primary_container}
       DecorationFocus=${m.primary}
       DecorationHover=${m.primary}
-      ForegroundActive=${m.on_primary}
+      ForegroundActive=${m.on_primary_container}
       ForegroundInactive=${m.on_surface_variant}
       ForegroundLink=${m.secondary}
       ForegroundNegative=${m.error}
       ForegroundNeutral=${m.tertiary}
-      ForegroundNormal=${m.on_primary}
-      ForegroundPositive=${m.primary}
+      ForegroundNormal=${m.on_primary_container}
+      ForegroundPositive=${m.tertiary}
       ForegroundVisited=${m.on_secondary_container}
 
       [Colors:Tooltip]

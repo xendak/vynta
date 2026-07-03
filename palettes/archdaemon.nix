@@ -54,9 +54,9 @@ let
     error_container = "#674847";
     on_error_container = "#FFDAD6";
 
-    background = "#1E1F28";
+    background = "#0C0D11";
     foreground = "#E6E1E5";
-    bg = "#1E1F28";
+    bg = "#0C0D11";
     fg = "#E6E1E5";
 
     on_background = "#E6E1E5";
