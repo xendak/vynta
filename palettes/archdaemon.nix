@@ -70,8 +70,10 @@ let
     surface_container_lowest = "#101119";
     surface_container_low = "#12131A";
     surface_container = "#1E1F28";
-    surface_container_high = "#2D2E3B";
-    surface_container_highest = "#3F4152";
+    surface_container_high = "#222330";
+    surface_container_highest = "#2F3142";
+    # surface_container_high = "#2D2E3B";
+    # surface_container_highest = "#3F4152";
 
     dim = "#938F99";
     outline = "#ACA7B6";

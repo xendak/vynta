@@ -45,6 +45,20 @@ in
 
         }
 
+        menupopup menuitem:hover,
+        menupopup menuitem[_moz-menuactive="true"] {
+          background-color: light-dark(${p.surface_variant}, ${p.surface_container_high}) !important;
+          color: light-dark(${p.inverse_primary}, ${p.primary}) !important;
+        }
+
+        menupopup,
+        menupopup menuitem,
+        menupopup menu,
+        menulist > menupopup > menuitem {
+          background-color: light-dark(${p.inverse_surface}, ${p.surface_container}) !important;
+          color: light-dark(${p.inverse_on_surface}, ${p.fg}) !important;
+        }
+
         .zen-view-splitter-header {
           background-color: ${p.surface_container_low} !important;
           color: ${p.primary} !important;
@@ -222,9 +236,22 @@ in
     '';
 
   "zen/userContent.css" =
-    #css
+    # css
     ''
       @media (prefers-color-scheme: ${scheme}) {
+        select,
+        select option,
+        select optgroup {
+          background-color: light-dark(${p.inverse_surface}, ${p.surface_container}) !important;
+          color: light-dark(${p.inverse_on_surface}, ${p.fg}) !important;
+        }
+
+        select option:checked,
+        select option:hover {
+          background-color: light-dark(${p.surface_variant}, ${p.surface_container_high}) !important;
+          color: light-dark(${p.primary}, ${p.primary}) !important;
+        }
+        
         @-moz-document url-prefix("about:") {
           :root {
             --in-content-page-color: ${p.fg} !important;
