@@ -166,10 +166,13 @@ let
         #bash
         ''
           NIRI_CONFIG="${config.home.homeDirectory}/.config/niri/config.kdl"
-          TMP_CONFIG=$(mktemp)
-          { echo 'include "colors.kdl"'; cat "$NIRI_CONFIG"; } > "$TMP_CONFIG"
-          mv -f "$TMP_CONFIG" "$NIRI_CONFIG"
+          if ! grep -qF 'include "colors.kdl"' "$NIRI_CONFIG"; then
+            TMP_CONFIG=$(mktemp)
+            { echo 'include "colors.kdl"'; cat "$NIRI_CONFIG"; } > "$TMP_CONFIG"
+            mv -f "$TMP_CONFIG" "$NIRI_CONFIG"
+          fi
           sed -i '/color "#00000070"/d' "$NIRI_CONFIG"
+          sed -i 's/variable-refresh-rate on-demand=false/variable-refresh-rate on-demand=true/g' "$NIRI_CONFIG"
         ''
       }
 
