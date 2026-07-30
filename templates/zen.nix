@@ -35,6 +35,7 @@ in
           --toolbox-bgcolor-inactive: ${p.surface_container_low} !important;
           --toolbox-textcolor: ${p.fg} !important;
           --toolbar-color: ${p.fg} !important;
+          --input-color: ${p.fg} !important;  
 
           --zen-branding-dark: ${p.surface_container_low} !important;
           --zen-branding-paper: ${p.fg} !important;
@@ -106,10 +107,56 @@ in
           border-color: ${p.primary} !important;
         }
 
+        .urlbar-input, #urlbar-scheme, .searchbar-textbox {
+          color: ${p.fg} !important;  
+        }
+
+
+        .urlbar-input,
+        #urlbar-scheme,
+        .searchbar-textbox {
+          color: ${p.fg} !important;
+        }
+
+        #urlbar-input::selection,
+        #urlbar-input::-moz-selection,
+        .urlbar-input::selection,
+        .urlbar-input::-moz-selection {
+          background-color: ${p.surface_container_low} !important;
+          color: ${p.primary} !important;
+        }
+        .urlbarView-row[selected] > .urlbarView-row-inner,
+        .urlbarView-row:hover > .urlbarView-row-inner {
+          background-color: ${p.surface_container_high} !important;
+        }
+
+        .urlbarView-row {
+          &[selected] {
+            & *,
+            & .urlbarView-title-separator::before {
+              color: ${p.primary} !important;
+            }
+          }
+        }
+
         .urlbarView-url {
+          color: ${p.fg} !important;
+        }
+
+        .urlbarView-url strong,
+        .urlbarView-title strong {
+          color: ${p.primary} !important;
+          font-weight: bold !important;
+        }
+
+        .urlbarView-action {
           color: ${p.primary} !important;
         }
 
+        .urlbarView-url {
+          color: ${p.primary} !important;
+        }
+        
         .urlbarView-row {
           color: ${p.fg} !important;
         }
@@ -158,7 +205,7 @@ in
         .subviewbutton[selected],
         .subviewbutton-nav:hover:not([disabled="true"]),
         .subviewbutton-iconic:hover:not([disabled="true"]) {
-          background-color: ${p.selection_bg} !important;
+          background-color: ${p.surface_container_high} !important;
           color: ${p.selection_fg} !important;
         }
 
@@ -214,7 +261,7 @@ in
         #identity-popup-mainView toolbarbutton:hover,
         #protections-popup-mainView toolbarbutton:hover,
         .zen-identity-panel-button:hover {
-          background-color: ${p.selection_bg} !important;
+          background-color: ${p.surface_container_high} !important;
           color: ${p.selection_fg} !important;
           fill: ${p.selection_fg} !important;
           border-color: ${p.primary} !important;
@@ -299,7 +346,7 @@ in
         }
 
         #tabbrowser-tabs {
-          --tab-selected-bgcolor: ${p.selection_bg} !important
+          --tab-selected-bgcolor: ${p.surface_container_high} !important
         }
 
         #sidebar-splitter {
