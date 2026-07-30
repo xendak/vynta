@@ -9,7 +9,8 @@ in
     # css
     ''
       @media (prefers-color-scheme: ${scheme}) {
-        :root {
+        :root,
+        zen-workspace {
           --zen-colors-primary: ${p.surface_container} !important;
           --zen-primary-color: ${p.primary} !important;
           --zen-colors-secondary: ${p.surface_container} !important;
@@ -54,7 +55,7 @@ in
         menupopup menu,
         menulist > menupopup > menuitem {
           background-color: transparent !important;
-          color: inherit !important;
+          color: ${p.fg} !important;
         }
 
         menupopup menuitem:hover,
@@ -137,6 +138,92 @@ in
               color: ${p.fg} !important;
             }
           }
+        }
+
+        .toolbarbutton-animatable-box,
+        .toolbarbutton-1 {
+          color: ${p.primary} !important;
+        }
+        .subviewbutton,
+        .subviewbutton-nav,
+        .subviewbutton-iconic {
+          color: ${p.fg} !important;
+        }
+
+        .shortcut-text {
+          color: ${p.primary} !important;
+        }
+
+        subviewbutton:hover:not([disabled="true"]),
+        .subviewbutton[selected],
+        .subviewbutton-nav:hover:not([disabled="true"]),
+        .subviewbutton-iconic:hover:not([disabled="true"]) {
+          background-color: ${p.selection_bg} !important;
+          color: ${p.selection_fg} !important;
+        }
+
+        .titlebar-button {
+          color: ${p.fg} !important;
+        }
+
+        .subviewbutton[disabled="true"] {
+          color: ${p.dim} !important;
+          fill: ${p.dim} !important;
+        }
+
+        #unified-extensions-panel .panel-subview-body,
+        #unified-extensions-view,
+        #identity-popup-mainView,
+        #protections-popup-mainView,
+        #zen-identity-popup {
+          background-color: ${p.surface_container} !important;
+          color: ${p.fg} !important;
+        }
+
+        .unified-extensions-list-title,
+        #unified-extensions-view h2,
+        #identity-popup-mainView h2,
+        #protections-popup-mainView h2,
+        .panel-header-title {
+          color: ${p.fg} !important;
+        }
+
+        #unified-extensions-manage-extensions {
+          color: ${p.fg} !important;
+        }
+
+        #unified-extensions-manage-extensions:hover {
+          color: ${p.selection_fg} !important;
+          background: transparent !important;
+        }
+
+        #unified-extensions-view .unified-extensions-item-action-button,
+        #unified-extensions-view .unified-extensions-item-menu-button,
+        #unified-extensions-view toolbarbutton,
+        #identity-popup-mainView toolbarbutton,
+        #protections-popup-mainView toolbarbutton,
+        .zen-identity-panel-button {
+          background-color: transparent !important;
+          color: ${p.fg} !important;
+          fill: ${p.fg} !important;
+        }
+
+        #unified-extensions-view .unified-extensions-item-action-button:hover,
+        #unified-extensions-view .unified-extensions-item-menu-button:hover,
+        #unified-extensions-view toolbarbutton:hover,
+        #identity-popup-mainView toolbarbutton:hover,
+        #protections-popup-mainView toolbarbutton:hover,
+        .zen-identity-panel-button:hover {
+          background-color: ${p.selection_bg} !important;
+          color: ${p.selection_fg} !important;
+          fill: ${p.selection_fg} !important;
+          border-color: ${p.primary} !important;
+        }
+
+        .identity-popup-description,
+        .protections-popup-description,
+        #unified-extensions-view .unified-extensions-item-description {
+          color: ${p.fg} !important;
         }
 
         .identity-color-blue {
