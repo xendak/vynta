@@ -35,7 +35,7 @@ in
         output: terminal
       disableStartupPopups: true
       git:
-        pagers:
+        diffRenderers::
           - command: delta --${type} --paging=never --side-by-side --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --syntax-theme=base16
           - command: difft --color=always --syntax-highlight=on --tab-width=2
             type: extDiff
