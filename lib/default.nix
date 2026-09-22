@@ -49,9 +49,9 @@ rec {
       }
     else
       {
-        on = colorLib.mix hue white 0.85;
-        container = colorLib.mix hue white 0.80;
-        on_container = colorLib.mix hue black 0.80;
+        on = if (colorLib.hexToHsl hue).l > 50 then black else white;
+        container = colorLib.mix hue white 0.75;
+        on_container = colorLib.mix hue black 0.85;
       };
 
   deriveAnsi =
